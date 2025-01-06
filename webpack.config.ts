@@ -1,8 +1,8 @@
-import * as path from 'path'
-import * as webpack from 'webpack'
-import * as HTMLWebpackPlugin from 'html-webpack-plugin'
+import path from 'path'
+import webpack from 'webpack'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
 
-module.exports = {
+const config: webpack.Configuration = {
     mode: 'development',
     entry: path.resolve(__dirname, 'src', 'index.ts'),
     output: {
@@ -11,7 +11,7 @@ module.exports = {
         clean: true,
     },
     plugins: [
-        new HTMLWebpackPlugin({
+        new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'pudlic', 'index.html')
         }),
         new webpack.ProgressPlugin(),
@@ -29,3 +29,5 @@ module.exports = {
         extensions: ['.tsx', '.ts', '.js'],
     },
 }
+
+export default config;
