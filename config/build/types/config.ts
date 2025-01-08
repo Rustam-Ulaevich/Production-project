@@ -18,3 +18,6 @@ export interface BuildOptions {
     isDev: boolean;
     port: number;
 }
+
+
+// Add plugin Mini css (npm & add plugin to buildPlugin.ts)
